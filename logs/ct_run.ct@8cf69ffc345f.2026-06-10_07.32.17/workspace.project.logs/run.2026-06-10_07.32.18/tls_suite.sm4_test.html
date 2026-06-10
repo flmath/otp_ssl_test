@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test tls_SUITE:sm4_test result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery-migrate.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="tls_suite.src.html#sm4_test-1">tls_SUITE:sm4_test/1</a> (click for source code)
+
+=== Config value:
+
+    [{cert_dir,"/workspace/project/certs"},
+     {watchdog,&lt;0.153.0&gt;},
+     {tc_logfile,"/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17/workspace.project.logs/run.2026-06-10_07.32.18/tls_suite.sm4_test.html"},
+     {tc_group_properties,[]},
+     {tc_group_path,[]},
+     {data_dir,"/workspace/project/test/tls_SUITE_data/"},
+     {priv_dir,"/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17/workspace.project.logs/run.2026-06-10_07.32.18/log_private/"}]
+
+=== Current directory is "/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17"
+
+=== Started at 2026-06-10 07:32:18
+
+<br />
+
+</pre>
+<div class="ct_error_notify"><pre><b>*** CT Error Notification 2026-06-10 07:32:18.582 ***</b><a id=e-3 class="link-to-entry" href="#e-3">&#x1f517;</a>
+tls_server:start at tls_server.erl:5 failed
+Reason: {badmatch,{error,{options,{certfile,{"/workspace/project/cer...}
+
+<a href="#end">Full error description and stacktrace</a>
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2026-06-10 07:32:18
+=== Location: [{tls_server,start,5},
+              {tls_SUITE,test_handshake,<a href="tls_suite.src.html#52">52</a>},
+              {test_server,ts_tc,1799},
+              {test_server,run_test_case_eval1,1308},
+              {test_server,run_test_case_eval,1240}]
+=== === Reason: no match of right hand side value {error,
+                                                    {options,
+                                                     {certfile,
+                                                      {"/workspace/project/certs/sm2_cert.pem",
+                                                       enoent}}}}
+  in function  tls_server:start/3 (src/tls_server.erl:5)
+  in call from tls_SUITE:test_handshake/4 (tls_SUITE.erl:52)
+  in call from test_server:ts_tc/3 (test_server.erl:1799)
+  in call from test_server:run_test_case_eval1/6 (test_server.erl:1308)
+  in call from test_server:run_test_case_eval/9 (test_server.erl:1240)
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>  |  <a href="../../../suite.log.latest.html">Latest test result</a>
+</p>
+<div class="copyright">Copyright &copy; 2026 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!--date-->Wed Jun 10 2026 07:32:18<!--/date--><br />
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,87 @@
+=== Suite started at 2026-06-10 07:32:18
+=== Starting test, 3 test cases
+=cases         3
+=user          
+=host          8cf69ffc345f
+=hosts         8cf69ffc345f 
+=emulator_vsn  17.0
+=emulator      beam
+=otp_release   29
+=started       2026-06-10 07:32:18
+=case          tls_SUITE:init_per_suite
+=logfile       tls_suite.init_per_suite.html
+=started       2026-06-10 07:32:18
+=ended         2026-06-10 07:32:18
+=result        ok
+=elapsed       0.256595s
+=case          tls_SUITE:rsa_test
+=logfile       tls_suite.rsa_test.html
+=started       2026-06-10 07:32:18
+=ended         2026-06-10 07:32:18
+=result        ok
+=elapsed       0.172421s
+=case          tls_SUITE:ecc_test
+=logfile       tls_suite.ecc_test.html
+=started       2026-06-10 07:32:18
+=ended         2026-06-10 07:32:18
+=result        failed: badarg, [{inet_tcp,listen,193},
+                                {tls_socket,listen,90},
+                                {ssl,listen,2357},
+                                {tls_server,start,5},
+                                {tls_SUITE,test_handshake,52},
+                                {test_server,ts_tc,1799},
+                                {test_server,run_test_case_eval1,1308},
+                                {test_server,run_test_case_eval,1240}]
+=elapsed       0.001551s
+=== *** FAILED test case 2 of 3 ***
+=case          tls_SUITE:sm4_test
+=logfile       tls_suite.sm4_test.html
+=started       2026-06-10 07:32:18
+=ended         2026-06-10 07:32:18
+=result        failed: {{badmatch,
+                         {error,
+                          {options,
+                           {certfile,
+                            {"/workspace/project/certs/sm2_cert.pem",
+                             enoent}}}}},
+                        [{tls_server,start,3,
+                          [{file,"src/tls_server.erl"},{line,5}]},
+                         {tls_SUITE,test_handshake,4,
+                          [{file,"tls_SUITE.erl"},{line,52}]},
+                         {test_server,ts_tc,3,
+                          [{file,"test_server.erl"},{line,1799}]},
+                         {test_server,run_test_case_eval1,6,
+                          [{file,"test_server.erl"},{line,1308}]},
+                         {test_server,run_test_case_eval,9,
+                          [{file,"test_server.erl"},{line,1240}]}]}, [{tls_server,
+                                                                       start,
+                                                                       5},
+                                                                      {tls_SUITE,
+                                                                       test_handshake,
+                                                                       52},
+                                                                      {test_server,
+                                                                       ts_tc,
+                                                                       1799},
+                                                                      {test_server,
+                                                                       run_test_case_eval1,
+                                                                       1308},
+                                                                      {test_server,
+                                                                       run_test_case_eval,
+                                                                       1240}]
+=elapsed       0.000198s
+=== *** FAILED test case 3 of 3 ***
+=case          tls_SUITE:end_per_suite
+=logfile       tls_suite.end_per_suite.html
+=started       2026-06-10 07:32:18
+=ended         2026-06-10 07:32:18
+=result        ok
+=elapsed       0.002362s
+=group_time    0.531s
+=== TEST COMPLETE, 1 ok, 2 failed of 3 test cases
+
+=finished      2026-06-10 07:32:18
+=failed        2
+=successful    1
+=user_skipped  0
+=auto_skipped  0
+=elapsed_time  566080

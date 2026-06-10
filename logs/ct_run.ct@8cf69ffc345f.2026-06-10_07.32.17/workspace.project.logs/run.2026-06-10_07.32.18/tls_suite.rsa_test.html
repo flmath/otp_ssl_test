@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test tls_SUITE:rsa_test result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery-migrate.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="tls_suite.src.html#rsa_test-1">tls_SUITE:rsa_test/1</a> (click for source code)
+
+=== Config value:
+
+    [{cert_dir,"/workspace/project/certs"},
+     {watchdog,&lt;0.153.0&gt;},
+     {tc_logfile,"/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17/workspace.project.logs/run.2026-06-10_07.32.18/tls_suite.rsa_test.html"},
+     {tc_group_properties,[]},
+     {tc_group_path,[]},
+     {data_dir,"/workspace/project/test/tls_SUITE_data/"},
+     {priv_dir,"/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17/workspace.project.logs/run.2026-06-10_07.32.18/log_private/"}]
+
+=== Current directory is "/var/log/erlang/ct_run.ct@8cf69ffc345f.2026-06-10_07.32.17"
+
+=== Started at 2026-06-10 07:32:18
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-10 07:32:18.529 ***</b><a id=e-1 class="link-to-entry" href="#e-1">&#x1f517;</a>
+OpenSSL Output: Can't use SSL_get_servername
+depth=0 CN = localhost
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = localhost
+   i:CN = localhost
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jun 10 07:32:18 2026 GMT; NotAfter: Jun 10 07:32:18 2027 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIDCTCCAfGgAwIBAgIUJe6m0hgUao5V5uhqsh+kSnnY6mkwDQYJKoZIhvcNAQEL
+BQAwFDESMBAGA1UEAwwJbG9jYWxob3N0MB4XDTI2MDYxMDA3MzIxOFoXDTI3MDYx
+MDA3MzIxOFowFDESMBAGA1UEAwwJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAscRkjM2fKR99AtlsCmcftBSr85CHUgoRYA9tlPl3e1PU
+2Pi9bSE5nacqh0wwn1eXZbQQIJEKpeFYeH0W/ItC9pfWrNanj7aGDjc1yT9KEIpA
+lWoSMxyntMu+bmAkBaHv3goeVQBrds8hqpU5j1rZtVO5dQIOhMINOgDWzXAJy4M4
+oh7vsEnvoI8GILqfB9Zk0bhgD1gMIht+wImCAY5PVvcAgzX6/oDeOk7WDiaeGwDu
+XcKbtwyydZHyXYKBTsrsIR3eRZVMHinMvH3dQEQWbbjPo2Ip7v9RflFf512T++gN
+DTLgigjXeDdjTc6kbhSs/29/r78bKlYqvFr4AiHr3wIDAQABo1MwUTAdBgNVHQ4E
+FgQUNpiKHQOoqyJWo0+qklRRSWKJ6GYwHwYDVR0jBBgwFoAUNpiKHQOoqyJWo0+q
+klRRSWKJ6GYwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAZdwx
+nvAlQa9Lao2VP/V1zweVAuHJQrikBqaB6hDJ3R6P9QC5R8iUCruYlmlDeL4EGeAu
+Oz8iQkxtFbqUvXw7LvHXnUjxdMMZ8Qzs1G7Qclkf4aMizWFFX3XpTbRTCgt7gBm5
+Z6dLES8QSWLO0eWrLjrAi8khAR2yrxrA+oD/eJcgFVxbygXSqKp1wKjAp2O3Vkfq
+BqWeCKdDc34V0CsXgfUKtlSGpNqHvQLrjc8BaMQ5wpW2deKO+y6UhpZhZEgQiplZ
+Yw5YsXY19Njp313NUVaZUXV51ukrUVz8YDGmobq5MvDRrNYBBhxN/dArU3ZI8OpP
+IovReeiY6v0c8y0f9Q==
+-----END CERTIFICATE-----
+subject=CN = localhost
+issuer=CN = localhost
+---
+No client certificate CA names sent
+---
+SSL handshake has read 988 bytes and written 599 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.2, Cipher is AES256-SHA256
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : AES256-SHA256
+    Session-ID: F9AC33809A1656D2F7C3AE35C7F07A632B3232DC92EC9014606DAB489DFF739F
+    Session-ID-ctx: 
+    Master-Key: DB66015BA5CD087403ECC85B13917E7EC7FB24010B1CDD279DEB0AA638E042D57B81B98E0DBB5A18252A126DF7FF22B0
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1781076738
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+---
+DONE
+
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2026-06-10 07:32:18
+=== successfully completed test case
+=== === Returned value: ok
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>  |  <a href="../../../suite.log.latest.html">Latest test result</a>
+</p>
+<div class="copyright">Copyright &copy; 2026 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!--date-->Wed Jun 10 2026 07:32:18<!--/date--><br />
+</div>
+</center>
+</body>
+</html>

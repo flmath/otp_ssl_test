@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Ensure directories exist on host
+# Ensure directories exist and are writable
 LOGS_DIR="$(pwd)/logs"
 PROJECT_DIR="$(pwd)/project"
 mkdir -p "$LOGS_DIR" "$PROJECT_DIR"
+chmod -R 777 "$LOGS_DIR" "$PROJECT_DIR"
 
 # Make scripts executable
 chmod +x project/scripts/*.sh
@@ -21,6 +22,5 @@ echo "Inside container, use: /workspace/project/scripts/run_tests.sh [26|28|29]"
 podman run -it --rm \
     --name erlang-dev \
     -v "$LOGS_DIR:/var/log/erlang:Z" \
-    -v "$PROJECT_DIR:/workspace/project:Z" \
     -v "$(pwd):/workspace:Z" \
     "$IMAGE_NAME"
