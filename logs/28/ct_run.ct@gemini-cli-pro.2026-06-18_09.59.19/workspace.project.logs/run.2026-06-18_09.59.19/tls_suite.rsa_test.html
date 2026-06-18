@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test tls_SUITE:rsa_test result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="tls_suite.src.html#rsa_test-1">tls_SUITE:rsa_test/1</a> (click for source code)
+
+=== Config value:
+
+    [{cert_dir,"/workspace/project/certs"},
+     {watchdog,&lt;0.144.0&gt;},
+     {tc_logfile,"/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_09.59.19/workspace.project.logs/run.2026-06-18_09.59.19/tls_suite.rsa_test.html"},
+     {tc_group_properties,[]},
+     {tc_group_path,[]},
+     {data_dir,"/workspace/project/test/tls_SUITE_data/"},
+     {priv_dir,"/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_09.59.19/workspace.project.logs/run.2026-06-18_09.59.19/log_private/"}]
+
+=== Current directory is "/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_09.59.19"
+
+=== Started at 2026-06-18 09:59:19
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 09:59:19.714 ***</b><a id=e-1 class="link-to-entry" href="#e-1">&#x1f517;</a>
+Starting container: podman run -d --rm --name tls-server-9001 -v /workspace:/workspace:Z --net=host erlang-multi-version /bin/bash -c "source /usr/local/bin/switch-erlang.sh 28 && erl -pa /workspace/project/ebin -noshell -eval 'tls_server:start_standalone(9001, [{certfile,"/workspace/project/certs/rsa_cert.pem"},
+ {keyfile,"/workspace/project/certs/rsa_key.pem"},
+ {versions,['tlsv1.2']},
+ {ciphers,["AES256-GCM-SHA384"]}]).'"
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 09:59:19.773 ***</b><a id=e-2 class="link-to-entry" href="#e-2">&#x1f517;</a>
+Podman Start Result: Error: short-name "erlang-multi-version" did not resolve to an alias and no unqualified-search registries are defined in "/etc/containers/registries.conf"
+
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 09:59:19.773 ***</b><a id=e-3 class="link-to-entry" href="#e-3">&#x1f517;</a>
+Podman failed, falling back to local server...
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 09:59:19.937 ***</b><a id=e-4 class="link-to-entry" href="#e-4">&#x1f517;</a>
+Client Result: Connecting to 127.0.0.1
+Can't use SSL_get_servername
+depth=0 CN=localhost
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN=localhost
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN=localhost
+   i:CN=localhost
+   a:PKEY: RSA, 2048 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Jun 18 09:59:19 2026 GMT; NotAfter: Jun 18 09:59:19 2027 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIDCTCCAfGgAwIBAgIUfiNotbPpbJRoA0Jt4Kh3AbbkNxcwDQYJKoZIhvcNAQEL
+BQAwFDESMBAGA1UEAwwJbG9jYWxob3N0MB4XDTI2MDYxODA5NTkxOVoXDTI3MDYx
+ODA5NTkxOVowFDESMBAGA1UEAwwJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAyZKFWlp0DS4Chx1qHtDiyhdaB2Dnv+QqTbz6nN2TKKZv
+8zdPP3iEFGYwRNXsQuS4R259Y/UXx3fxgFXZKkH+UrUy9lWdSU0WUbWExsB1URt8
+iD1XO76R54wHjwz6cNOqzA56T9APY4tQwElCOV4M3fkpLZUUa5NHgkpWf7RBrPGR
+L7qXhTfN62P/ODNmXqEVwaYkEGnlAki8QP0jQ/mUvEr5jGmR5Vzl0cGZzuXl9725
+VUgshaT4YbZicxJEgib1QvU5UOlX1j0xNYFfrwVjTUuk1siNV34lWC+WOZpCXFvY
+j3g6BaRvP5KFuv1pzxCE1MSfm4O6hriSVitK3rW9jwIDAQABo1MwUTAdBgNVHQ4E
+FgQURDnynPiihvrjei3SdIWtwrDuCd8wHwYDVR0jBBgwFoAURDnynPiihvrjei3S
+dIWtwrDuCd8wDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAEhP2
++s0uz3/Mo8zaaOIbp8f92PQtxo6BkFtwSUOK8YAEPT9K2kQxgp8z0MVif4x9Uxqk
+7eR1GjUuj3yuVEh8cAx7OJNlGX6q48mz4eCdkqJ+YYburL6yBvL6BTPpu6eySwSx
+4NQGk5AiwF+kq1ffJTxgj6k4P9uUZMRfinbRbIqK7OwaLhoF2bl90GGw23w+rxhd
+fQxhsFjszISPWL0YxUjyoy2JwOzA2f76d6llmvlrC9h4Fi6ysZTo9w1gHh6gsTZs
+IhN9t84gt1LuEm7DEJVGVkMGDBDQ2QGwMGNVKSuiLeZgLRfsO6ds/hRb5kUdh+ZP
+5+5T6GV7zsxxiE919A==
+-----END CERTIFICATE-----
+subject=CN=localhost
+issuer=CN=localhost
+---
+No client certificate CA names sent
+---
+SSL handshake has read 948 bytes and written 1799 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.2, Cipher is AES256-GCM-SHA384
+Protocol: TLSv1.2
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : AES256-GCM-SHA384
+    Session-ID: 86DAFE44C1038CDCFA0CF0DA1BC4EEEFB7F61FFB9C66ED411D8C23951E26150E
+    Session-ID-ctx: 
+    Master-Key: 2666B4DDDA34D367F21755BB413D69380336F895B53AE0BBC161B3FE94871AF01E7E1E2D8EC77F6A27788B5AE73457C7
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1781776759
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+---
+closed
+
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2026-06-18 09:59:19
+=== successfully completed test case
+=== === Returned value: true
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>  |  <a href="../../../suite.log.latest.html">Latest test result</a>
+</p>
+<div class="copyright">Copyright &copy; 2026 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!--date-->Thu Jun 18 2026 09:59:19<!--/date--><br />
+</div>
+</center>
+</body>
+</html>

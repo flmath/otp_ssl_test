@@ -1,0 +1,13 @@
+services:
+  erlang-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: erlang-dev
+    volumes:
+      - .:/workspace:Z
+      - ./logs:/var/log/erlang:Z
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash

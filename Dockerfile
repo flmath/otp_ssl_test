@@ -1,5 +1,5 @@
-# Use Ubuntu 24.04 as the base (LTS available in 2026)
-FROM ubuntu:24.04
+# Use Debian stable as the base
+FROM debian:stable
 
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     autoconf \
     m4 \
-    libncurses5-dev \
+    libncurses-dev \
     libssl-dev \
     unixodbc-dev \
     libgmp-dev \
@@ -19,38 +19,58 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     ca-certificates \
+    podman \
+    cmake \
     && rm -rf /var/lib/apt/lists/*
+
+# Build GmSSL v2 (OpenSSL-compatible fork with SM support)
+# We add -Wno-error=incompatible-pointer-types to handle newer GCC versions
+RUN git clone -b GmSSL-v2 https://github.com/guanzhi/GmSSL.git /tmp/GmSSL \
+    && cd /tmp/GmSSL \
+    && ./config --prefix=/opt/gmssl -Wno-error=incompatible-pointer-types \
+    && make -j$(nproc) \
+    && make install \
+    && rm -rf /tmp/GmSSL
 
 # Install kerl (Erlang version manager)
 RUN curl -L https://raw.githubusercontent.com/kerl/kerl/master/kerl -o /usr/local/bin/kerl \
     && chmod a+x /usr/local/bin/kerl
 
-# Set up kerl and build requested Erlang versions
-# We build them in /opt/erlang
+# Set up kerl
 WORKDIR /opt/erlang
+RUN kerl update releases
 
-# Build Erlang 26.x, 28.x, and 29.x
-# Note: In a real environment, you might want to specify exact patch versions
-RUN kerl update releases \
-    && kerl build 26.2.5 26 \
-    && kerl install 26 /opt/erlang/26 \
-    && kerl build 28.0 28 \
-    && kerl install 28 /opt/erlang/28 \
-    && kerl build 29.0 29 \
-    && kerl install 29 /opt/erlang/29 \
-    && kerl cleanup all
+# Build Erlang 26
+RUN kerl build 26.2.5 26 && kerl install 26 /opt/erlang/26
+
+# Build Erlang 28
+RUN kerl build 28.0 28 && kerl install 28 /opt/erlang/28
+
+# Build Erlang 29
+RUN kerl build 29.0 29 && kerl install 29 /opt/erlang/29
+
+# Build GmSSL-linked Erlang
+RUN KERL_CONFIGURE_OPTIONS="--with-ssl=/opt/gmssl" kerl build 26.2.5 gmssl \
+    && kerl install gmssl /opt/erlang/gmssl
+
+# Cleanup kerl builds to save space
+RUN kerl cleanup all
 
 # Create a helper script to switch versions easily
 RUN echo '#!/bin/bash\n\
 if [ -z "$1" ]; then\n\
-  echo "Usage: switch-erlang [26|28|29]"\n\
+  echo "Usage: switch-erlang [26|28|29|gmssl]"\n\
   return 1\n\
 fi\n\
 case $1 in\n\
   26) source /opt/erlang/26/activate ;;\n\
   28) source /opt/erlang/28/activate ;;\n\
   29) source /opt/erlang/29/activate ;;\n\
-  *) echo "Unknown version: $1. Supported: 26, 28, 29" ; return 1 ;;\n\
+  gmssl) \n\
+    source /opt/erlang/gmssl/activate\n\
+    export LD_LIBRARY_PATH=/opt/gmssl/lib:$LD_LIBRARY_PATH\n\
+    ;;\n\
+  *) echo "Unknown version: $1. Supported: 26, 28, 29, gmssl" ; return 1 ;;\n\
 esac\n\
 echo "Erlang $(erl -noshell -eval '\''io:format("~s", [erlang:system_info(otp_release)]), halt().'\'') activated."' \
 > /usr/local/bin/switch-erlang.sh && chmod +x /usr/local/bin/switch-erlang.sh

@@ -1,0 +1,49 @@
+=== Suite started at 2026-06-18 09:59:25
+=== Starting test, 3 test cases
+=cases         3
+=user          
+=host          gemini-cli-pro
+=hosts         gemini-cli-pro 
+=emulator_vsn  17.0
+=emulator      beam
+=otp_release   29
+=started       2026-06-18 09:59:25
+=case          tls_SUITE:init_per_suite
+=logfile       tls_suite.init_per_suite.html
+=started       2026-06-18 09:59:25
+=ended         2026-06-18 09:59:25
+=result        ok
+=elapsed       0.123061s
+=case          tls_SUITE:rsa_test
+=logfile       tls_suite.rsa_test.html
+=started       2026-06-18 09:59:25
+=ended         2026-06-18 09:59:25
+=result        ok
+=elapsed       0.214508s
+=case          tls_SUITE:ecc_test
+=logfile       tls_suite.ecc_test.html
+=started       2026-06-18 09:59:25
+=ended         2026-06-18 09:59:26
+=result        ok
+=elapsed       0.096652s
+=case          tls_SUITE:sm4_test
+=logfile       tls_suite.sm4_test.html
+=started       2026-06-18 09:59:26
+=ended         2026-06-18 09:59:28
+=result        ok
+=elapsed       2.023462s
+=case          tls_SUITE:end_per_suite
+=logfile       tls_suite.end_per_suite.html
+=started       2026-06-18 09:59:28
+=ended         2026-06-18 09:59:28
+=result        ok
+=elapsed       0.002326s
+=group_time    2.553s
+=== TEST COMPLETE, 3 ok, 0 failed of 3 test cases
+
+=finished      2026-06-18 09:59:28
+=failed        0
+=successful    3
+=user_skipped  0
+=auto_skipped  0
+=elapsed_time  2593048

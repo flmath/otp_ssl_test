@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test tls_SUITE:ecc_test result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="tls_suite.src.html#ecc_test-1">tls_SUITE:ecc_test/1</a> (click for source code)
+
+=== Config value:
+
+    [{cert_dir,"/workspace/project/certs"},
+     {watchdog,&lt;0.145.0&gt;},
+     {tc_logfile,"/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.41/workspace.project.logs/run.2026-06-18_10.13.41/tls_suite.ecc_test.html"},
+     {tc_group_properties,[]},
+     {tc_group_path,[]},
+     {data_dir,"/workspace/project/test/tls_SUITE_data/"},
+     {priv_dir,"/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.41/workspace.project.logs/run.2026-06-18_10.13.41/log_private/"}]
+
+=== Current directory is "/var/log/erlang/28/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.41"
+
+=== Started at 2026-06-18 10:13:41
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:41.893 ***</b><a id=e-5 class="link-to-entry" href="#e-5">&#x1f517;</a>
+Starting container: podman run -d --rm --name tls-server-9002 -v /workspace:/workspace:Z --net=host erlang-multi-version /bin/bash -c "source /usr/local/bin/switch-erlang.sh 28 && erl -pa /workspace/project/ebin -noshell -eval 'tls_server:start_standalone(9002, [{certfile,"/workspace/project/certs/ecc_cert.pem"},
+ {keyfile,"/workspace/project/certs/ecc_key.pem"},
+ {versions,['tlsv1.3']},
+ {ciphers,["TLS_AES_256_GCM_SHA384"]}]).'"
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:41.950 ***</b><a id=e-6 class="link-to-entry" href="#e-6">&#x1f517;</a>
+Podman Start Result: Error: short-name "erlang-multi-version" did not resolve to an alias and no unqualified-search registries are defined in "/etc/containers/registries.conf"
+
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:41.950 ***</b><a id=e-7 class="link-to-entry" href="#e-7">&#x1f517;</a>
+Podman failed, falling back to local server...
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:41.987 ***</b><a id=e-8 class="link-to-entry" href="#e-8">&#x1f517;</a>
+Client Result: Connecting to 127.0.0.1
+Can't use SSL_get_servername
+depth=0 CN=localhost
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN=localhost
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN=localhost
+   i:CN=localhost
+   a:PKEY: EC, (prime256v1); sigalg: ecdsa-with-SHA256
+   v:NotBefore: Jun 18 10:13:41 2026 GMT; NotAfter: Jun 18 10:13:41 2027 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIBfjCCASOgAwIBAgIUMdTB38vWbIpt766c9g+9ZZ+sPpUwCgYIKoZIzj0EAwIw
+FDESMBAGA1UEAwwJbG9jYWxob3N0MB4XDTI2MDYxODEwMTM0MVoXDTI3MDYxODEw
+MTM0MVowFDESMBAGA1UEAwwJbG9jYWxob3N0MFkwEwYHKoZIzj0CAQYIKoZIzj0D
+AQcDQgAEhh7nALP1vxTRFiqddig7MaOJJHQcG+Fu7d4jrpqzuttgM0bMMUKF7mrV
+I7pa873RcOTBC+1Bp8nyXOUWQ3T0JaNTMFEwHQYDVR0OBBYEFJe7UiGyIBpB16n9
+de+BlE0WGU9vMB8GA1UdIwQYMBaAFJe7UiGyIBpB16n9de+BlE0WGU9vMA8GA1Ud
+EwEB/wQFMAMBAf8wCgYIKoZIzj0EAwIDSQAwRgIhAMyQnIxmgLYEojfEpi5pRJ/f
+DciwljUBnO+Qb/cOyqFGAiEAmbA2stidiw+q/axrFt9ZoqDhxZzVhG3jPxrLS7jU
+5O4=
+-----END CERTIFICATE-----
+subject=CN=localhost
+issuer=CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ecdsa_secp256r1_sha256
+Peer Temp Key: X25519, 253 bits
+---
+SSL handshake has read 756 bytes and written 1609 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Protocol: TLSv1.3
+Server public key is 256 bit
+This TLS version forbids renegotiation.
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 18 (self-signed certificate)
+---
+DONE
+
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2026-06-18 10:13:42
+=== successfully completed test case
+=== === Returned value: true
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>  |  <a href="../../../suite.log.latest.html">Latest test result</a>
+</p>
+<div class="copyright">Copyright &copy; 2026 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!--date-->Thu Jun 18 2026 10:13:41<!--/date--><br />
+</div>
+</center>
+</body>
+</html>

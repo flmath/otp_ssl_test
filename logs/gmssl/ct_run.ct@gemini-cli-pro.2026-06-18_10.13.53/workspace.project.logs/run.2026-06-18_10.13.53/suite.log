@@ -1,0 +1,48 @@
+=== Suite started at 2026-06-18 10:13:53
+=== Starting test, 3 test cases
+=cases         3
+=user          
+=host          gemini-cli-pro
+=hosts         gemini-cli-pro 
+=emulator_vsn  14.2.5
+=emulator      beam
+=otp_release   26
+=started       2026-06-18 10:13:53
+=case          tls_SUITE:init_per_suite
+=logfile       tls_suite.init_per_suite.html
+=started       2026-06-18 10:13:53
+=ended         2026-06-18 10:13:53
+=result        ok
+=elapsed       0.1815
+=case          tls_SUITE:rsa_test
+=logfile       tls_suite.rsa_test.html
+=started       2026-06-18 10:13:53
+=ended         2026-06-18 10:13:53
+=result        ok
+=elapsed       0.208069
+=case          tls_SUITE:ecc_test
+=logfile       tls_suite.ecc_test.html
+=started       2026-06-18 10:13:53
+=ended         2026-06-18 10:13:54
+=result        skipped: "TLS 1.3 not supported by this Erlang/SSL build"
+=== *** SKIPPED test case 2 of 3 ***
+=case          tls_SUITE:sm4_test
+=logfile       tls_suite.sm4_test.html
+=started       2026-06-18 10:13:54
+=ended         2026-06-18 10:13:56
+=result        ok
+=elapsed       2.026806
+=case          tls_SUITE:end_per_suite
+=logfile       tls_suite.end_per_suite.html
+=started       2026-06-18 10:13:56
+=ended         2026-06-18 10:13:56
+=result        ok
+=elapsed       0.002099
+=group_time    2.519s
+=== TEST COMPLETE, 2 ok, 0 failed, 1 skipped of 3 test cases
+
+=finished      2026-06-18 10:13:56
+=failed        0
+=successful    2
+=user_skipped  1
+=auto_skipped  0

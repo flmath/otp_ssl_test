@@ -24,10 +24,11 @@ erlc -o ebin src/tls_server.erl
 
 # Run Common Test
 # -pa ebin: Adds the compiled server to the code path
-# -logdir /var/log/erlang: Stores test logs in the shared host directory
-ct_run -dir test -pa "$PROJECT_ROOT/ebin" -logdir /var/log/erlang
+# -logdir /var/log/erlang/$VERSION: Stores test logs in version-specific directories
+mkdir -p "/var/log/erlang/$VERSION"
+ct_run -dir test -pa "$PROJECT_ROOT/ebin" -logdir "/var/log/erlang/$VERSION"
 
 echo "=========================================="
 echo "Tests for Erlang $VERSION completed."
-echo "Check /workspace/logs/ on host for detailed CT reports."
+echo "Check /workspace/logs/$VERSION on host for detailed CT reports."
 echo "=========================================="

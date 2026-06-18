@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test tls_SUITE:sm4_test result</title>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" href="../../ct_default.css" type="text/css"></link>
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+<a name="top"></a><pre>
+=== Test case: <a href="tls_suite.src.html#sm4_test-1">tls_SUITE:sm4_test/1</a> (click for source code)
+
+=== Config value:
+
+    [{cert_dir,"/workspace/project/certs"},
+     {watchdog,&lt;0.150.0&gt;},
+     {tc_logfile,"/var/log/erlang/gmssl/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.53/workspace.project.logs/run.2026-06-18_10.13.53/tls_suite.sm4_test.html"},
+     {tc_group_properties,[]},
+     {tc_group_path,[]},
+     {data_dir,"/workspace/project/test/tls_SUITE_data/"},
+     {priv_dir,"/var/log/erlang/gmssl/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.53/workspace.project.logs/run.2026-06-18_10.13.53/log_private/"}]
+
+=== Current directory is "/var/log/erlang/gmssl/ct_run.ct@gemini-cli-pro.2026-06-18_10.13.53"
+
+=== Started at 2026-06-18 10:13:54
+
+<br />
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:54.020 ***</b><a id=e-5 class="link-to-entry" href="#e-5">&#x1f517;</a>
+Starting GmSSL TLS 1.2 server with SM ciphers: export LD_LIBRARY_PATH=/opt/gmssl/lib && /opt/gmssl/bin/gmssl s_server -cert /workspace/project/certs/sm2_sign_cert.pem -key /workspace/project/certs/sm2_sign_key.pem -dcert /workspace/project/certs/sm2_enc_cert.pem -dkey /workspace/project/certs/sm2_enc_key.pem -accept 9003 -www -cipher ECDHE-SM2-WITH-SMS4-GCM-SM3 > /dev/null 2>&1 &
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:56.026 ***</b><a id=e-6 class="link-to-entry" href="#e-6">&#x1f517;</a>
+Linking to library handshake: <a href="tls_suite.sm4_test.html">Handshake Details</a>
+</pre></div>
+<pre>
+
+</pre>
+<div class="default"><pre><b>*** User 2026-06-18 10:13:56.040 ***</b><a id=e-7 class="link-to-entry" href="#e-7">&#x1f517;</a>
+Client Result: depth=0 CN = SM2-Enc
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = SM2-Enc
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:/CN=SM2-Enc
+   i:/CN=SM2-Enc
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIBFDCBugIJAJdRE7HhJXcbMAoGCCqBHM9VAYN1MBIxEDAOBgNVBAMMB1NNMi1F
+bmMwHhcNMjYwNjE4MTAxMzUzWhcNMjcwNjE4MTAxMzUzWjASMRAwDgYDVQQDDAdT
+TTItRW5jMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE0OmllCbI3oKbVHQBUszl
+6rhDDRr5eriG+xUXyyXzYQ1IYUCY3KrCCVDJ2AaCmtagwFyNCX2tSrz/62bNBebB
+LTAKBggqgRzPVQGDdQNJADBGAiEA2EegWrs9NnbOnptz+BLzixryoi0M4I1J5D8p
+Q1E35UUCIQCXcNNsFYkPGb07kA+gEijxon7zGWkUTfSIVRDgIyHj3g==
+-----END CERTIFICATE-----
+subject=/CN=SM2-Enc
+issuer=/CN=SM2-Enc
+---
+No client certificate CA names sent
+Peer signing digest: SM3
+Server Temp Key: ECDH, SM2, 256 bits
+---
+SSL handshake has read 753 bytes and written 254 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-SM2-WITH-SMS4-GCM-SM3
+Server public key is 256 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-SM2-WITH-SMS4-GCM-SM3
+    Session-ID: 70FF0C5D1BD7DF218F1CD2946F521E4EB8CAD00DAC3A6207F856FFCC12339471
+    Session-ID-ctx: 
+    Master-Key: C218CCF96FA345EA4A63CFEF5DFE31942E4AB55556B55BF7B2A2D60BB8136982892DCB7FE0235FB530F748DC5DC57AA1
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - bd ce 04 3e a1 04 14 5a-4f f6 7e d8 46 9d 3b 8e   ...>...ZO.~.F.;.
+    0010 - 46 71 93 71 85 9d ba 8e-27 64 66 8a 06 08 fc fa   Fq.q....'df.....
+    0020 - c0 19 7e 83 2c 25 f0 ac-51 e9 c6 57 b8 9c c9 32   ..~.,%..Q..W...2
+    0030 - 30 88 8f 40 07 b9 3d 0e-ef b6 89 91 c8 3f d9 7f   0..@..=......?..
+    0040 - 99 8f 29 19 5a 82 26 de-ea 60 d2 dc f1 88 45 fd   ..).Z.&..`....E.
+    0050 - a8 a6 95 8c a5 9f 9e 77-08 a5 da 35 b4 1d ee 9d   .......w...5....
+    0060 - 16 43 3e c4 e4 b0 02 bf-c5 0f 21 5e cf 52 cc 25   .C>.......!^.R.%
+    0070 - 73 42 28 05 1d e8 e9 2b-ce bd 97 05 8b d7 b9 83   sB(....+........
+    0080 - 82 48 87 af dd 1c e4 65-e0 2d a2 ea c2 19 95 cd   .H.....e.-......
+    0090 - ea ce eb 43 95 6e d8 41-47 8e 75 51 18 9b 21 73   ...C.n.AG.uQ..!s
+
+    Start Time: 1781777636
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+DONE
+
+</pre></div>
+<pre>
+<a name="end"></a>
+
+
+=== Ended at 2026-06-18 10:13:56
+=== successfully completed test case
+=== === Returned value: ok
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>  |  <a href="../../../suite.log.latest.html">Latest test result</a>
+</p>
+<div class="copyright">Copyright &copy; 2026 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!--date-->Thu Jun 18 2026 10:13:54<!--/date--><br />
+</div>
+</center>
+</body>
+</html>
